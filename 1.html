@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #studentList{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+        #studentList li img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="favoriteStudents">
+        <h2>Favorite Students</h2>
+        <ul id="studentList"></ul>
+      </div>
+      <script>
+        const students = [
+  {
+    name: "Student 1",
+    favorite: 250,
+    image: "https://znews-photo.zingcdn.me/w860/Uploaded/mdf_drkydd/2018_05_07/14_zing.jpg",
+    lastUpdated: "2023-06-25"
+  },
+  {
+    name: "Student 2",
+    favorite: 180,
+    image: "student2.jpg",
+    lastUpdated: "2023-06-20"
+  },
+  {
+    name: "Student 3",
+    favorite: 180,
+    image: "student2.jpg",
+    lastUpdated: "2023-06-21"
+  },
+  {
+    name: "Student 4",
+    favorite: 180,
+    image: "student2.jpg",
+    lastUpdated: "2023-06-22"
+  },
+  {
+    name: "Student 5",
+    favorite: 180,
+    image: "student2.jpg",
+    lastUpdated: "2023-06-19"
+  },
+  {
+    name: "Student 6",
+    favorite: 180,
+    image: "student2.jpg",
+    lastUpdated: "2023-06-18"
+  },
+  {
+    name: "Student 7",
+    favorite: 180,
+    image: "student2.jpg",
+    lastUpdated: "2023-06-29"
+  },
+  {
+    name: "Student 8",
+    favorite: 180,
+    image: "student2.jpg",
+    lastUpdated: "2023-06-30"
+  },
+  {
+    name: "Student 9",
+    favorite: 180,
+    image: "student2.jpg",
+    lastUpdated: "2023-06-11"
+  },
+
+  {
+    name: "Student 10",
+    favorite: 180,
+    image: "student2.jpg",
+    lastUpdated: "2023-06-17"
+  },
+  {
+    name: "Student 11",
+    favorite: 180,
+    image: "student2.jpg",
+    lastUpdated: "2023-06-2"
+  },
+  // ...
+  // Các thông tin về học sinh khác
+  // ...
+];
+
+function displayFavoriteStudents() {
+  const favoriteStudentsElement = document.getElementById("favoriteStudents");
+  const studentListElement = document.getElementById("studentList");
+  studentListElement.innerHTML = ""; // Xóa nội dung cũ
+
+  // Sắp xếp các học sinh theo yêu thích và ngày cập nhật
+  const sortedStudents = students.sort((a, b) => {
+    if (a.favorite !== b.favorite) {
+      return b.favorite - a.favorite;
+    } else {
+      return new Date(b.lastUpdated) - new Date(a.lastUpdated);
+    }
+  });
+
+  // Hiển thị 10 học sinh được yêu thích nhất
+  const topStudents = sortedStudents.slice(0, 10);
+  topStudents.forEach(student => {
+    const studentItem = document.createElement("li");
+
+    // Tạo thẻ hình ảnh và thêm vào danh sách
+    const imageElement = document.createElement("img");
+    imageElement.src = student.image;
+    imageElement.alt = student.name;
+    studentItem.appendChild(imageElement);
+
+    // Tạo thông tin học sinh và thêm vào danh sách
+    const studentInfo = document.createElement("div");
+    studentInfo.classList.add("student-info");
+
+    const nameElement = document.createElement("h3");
+    nameElement.textContent = student.name;
+    studentInfo.appendChild(nameElement);
+
+    const favoriteElement = document.createElement("p");
+    favoriteElement.textContent = "Favorites: " + student.favorite;
+    studentInfo.appendChild(favoriteElement);
+
+    studentItem.appendChild(studentInfo);
+    studentListElement.appendChild(studentItem);
+  });
+
+  favoriteStudentsElement.style.display = "block";
+}
+
+displayFavoriteStudents();
+
+      </script>
+</body>
+</html>

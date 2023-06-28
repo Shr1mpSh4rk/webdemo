@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serifs;
+    list-style-type: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+}
+#sidebar {
+    height: 100%;
+    width: 80px;
+    background-color: #fff;
+    position: fixed!important;
+    z-index: 100;
+    overflow: auto;
+    flex: none;
+    right: 0;
+    padding-top: 100px;
+}
+#header {
+    height: 120px;
+    width: 100%;
+    flex: none;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.header-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-section {
+    width: 100%;
+    height: 40px;
+    width: 100%;
+    background-color: #0d4e96;
+    flex: none;
+}
+
+.header-text {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav>li {
+    display: inline-block;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+}
+
+.nav li a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+}
+
+.nav>li {
+    display: inline-block;
+}
+
+.nav li {
+    position: relative;
+}
+
+.nav .subnav {
+    min-width: 300px;
+    display: none;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav .subnav a {
+    color: #000;
+    padding: 0px 12px;
+    line-height: 38px;
+    display: block;
+}
+
+.nav li:hover .subnav {
+    display: block;
+}
+
+.nav>li:hover>a {
+    color: yellow;
+}
+
+.nav,
+.subnav {
+    list-style-type: none;
+}
+
+.nav-img {
+    padding: 10px;
+}
+
+.header-icon {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.anh {
+    height: 50px;
+}
+
+.img {
+    padding-top: 8px;
+    margin-right: 10px;
+}
+
+.header-item {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.topnav {
+    overflow: hidden;
+    line-height: 60px;
+}
+
+.topnav a {
+    display: inline-block;
+    color: black;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.item {
+    padding-left: 5px;
+}
+
+.topnav a:hover {
+    color: black;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+.body {
+    max-width: 1100px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.background {
+    background-image: url('https://www.haui.edu.vn/dnn/web/haui/assets/images/bg/parallax3.jpg');
+}
+.main-container {
+    width: 100%;
+    padding-right: 80px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+/* container */
+#container {
+    /* background-image: url("https://www.haui.edu.vn/dnn/web/haui/assets/images/bg/parallax3.jpg"); */
+    padding-top: 120px;
+    width: 100%;
+    height: auto;
+    margin-right: 80px !important;
+}
+
+.topnav-content {
+    overflow: hidden;
+    width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+}
+
+.topnav-content a {
+    line-height: 50px;
+    overflow: hidden;
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: #0d4e96;
+    margin-right: 5px;
+    padding-right: 18px;
+    padding-left: 18px;
+}
+
+.half-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    max-width: 100%;
+}
+
+.gird-content {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.text-p {
+    font-size: 13px;
+}
+
+.text-padding {
+    padding: 12px;
+}
+
+.border-thir {
+    border-top: 0.5px dotted black;
+}
+
+.p-title {
+    color: #0d4e96;
+}
+
+
+h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+#footer {
+    background-color: #520044;
+    width: 100%;
+    height: auto;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.swiper {
+    max-width: 1100px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+}
+.border-text {
+    border-top: 0.5px solid black;
+}
+#use {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+}
+.use-name {
+    width: 100%;
+    height: auto;
+}
+.w3-card {
+    height: 350px;
+}
+.swiper-slide {
+    width: 300px !important;
+}
+#myChart {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 900px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#studentList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 0 20px;
+    padding-bottom: 20px;
+}
+#studentList li {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px 0px, rgba(0, 0, 0, 0.19) 0px 4px 20px 0px;
+}
+#studentList li img {
+    width: 100%;
+    height: 150px;
+}
+.slideshow-container {
+    position: relative;
+    height: 300px; /* Điều chỉnh chiều cao của slideshow */
+    overflow: hidden;
+  }
+  
+  .slide {
+    position: absolute;
+    top: -100%;
+    transition: top 1s;
+  }
+  
+  .active {
+    top: 0;
+  }
+  
